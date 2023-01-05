@@ -35,6 +35,7 @@
   var startTime;
   var endTime;
   var difference;
+  var startTimes = [];
 
   function createDateTime(startTime) {
     var currentDate = new Date();
@@ -70,8 +71,8 @@
       // first Wednesday of the month
       //if (day < 8 && dateNow.getDay() == 3) {
       // Opportunity Wednesday
-      if (dateNow.getDay() == 3 && day < 8) { // early dismissal
-        var startTimes = [
+      if (dateNow.getDay() == 3 && dateNow.getDate < 8) { // early dismissal
+        startTimes = [
           "8:30",
           "8:42",
           "9:08",
@@ -88,9 +89,9 @@
           "13:08",
           "13:23",
           "13:49",
-          "14:15"]
+          "14:15"];
       } else {
-        var startTimes = [
+        startTimes = [
           "8:30",
           "8:42",
           "9:14",
